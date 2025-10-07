@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Reminder Tool</title>
+</head>
+<body>
+  <h2>Event Reminder</h2>
+
+  <label for="dateInput">Enter a past date:</label>
+  <input type="date" id="dateInput">
+  <button onclick="showDetails()">Check</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showDetails() {
+      let inputDate = document.getElementById("dateInput").value || new Date().toISOString().slice(0,10);
+
+      let past = new Date(inputDate);
+      let year = past.getFullYear();
+      let monthName = past.toLocaleString("default", { month: "long" });
+      let day = past.getDate();
+      let today = new Date();
+      let yearsPassed = today.getFullYear() - year;
+      let anniversaryThisYear = new Date(today.getFullYear(), past.getMonth(), past.getDate());
+      yearsPassed -= (today < anniversaryThisYear);
+
+
+      let messageArr = [
+        "It has been less than a year since that date.",
+        "It has been more than a year since that date."
+      ];
+      let message = messageArr[+(yearsPassed >= 1)];
+
+      document.getElementById("output").textContent =
+        `That date was on ${day} ${monthName}, ${year}. ` +
+        ${yearsPassed} full year(s) have passed. ${message};
+    }
+  </script>
+</body>
+</html>
