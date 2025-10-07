@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>The cleaned comment is:</p><br>
+
+    <p id="demo"></p>
+    
+    <p id="demo2"></p>
+    <script>
+        var str="I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great";
+        const bannedwords=['bad','ugly','stupid'];
+        const bannedRegex= new RegExp(bannedwords.join('|'), 'gi');
+        str = str.replace(bannedRegex,'****');
+        document.getElementById("demo").innerHTML=str;
+
+        const numberstr=str.match(/\d+/g);
+        const numcount= numberstr? numberstr.length:0;
+
+        const words=str.split(/[\s,.'":!?]+/);
+        let count=0;
+        for (const word of words){
+            if(word.length > 0 && word.charAt(0) >= 'A' && word.charAt(0) <= 'Z'){
+                count++
+            
+            }
+        }
+        // return count;
+
+        document.getElementById("demo2").innerHTML=`The number count:${numcount} Capitalized WordCount:${count} `;
+
+    </script>
+</body>
+</html>
