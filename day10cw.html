@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const jsontext = '{"name":"Alice", "email":"Alice@gmail.com","message":"Hello there"}';
+        const processmsg = (jsonString) => {
+            try{
+            const userObj = JSON.parse(jsonString);
+            if (userObj && userObj.name){
+                console.log(`Message received from ${userObj.name}`);
+            }
+            else{
+                console.log('Error: "name" property is missing from JSON data.');
+            }
+        }catch(error){
+            console.error("Error processing JSON data:",error.message);
+    
+        }
+        };
+        console.log("Testing with valid JSON");
+        processmsg(jsontext);
+    </script>
+</body>
+</html>
