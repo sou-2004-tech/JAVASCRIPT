@@ -1,27 +1,31 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<>, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 <body>
-  
 
-<p>Click the button to do a case-insensitive search for "Mashupstack" in a string.</p>
+<h2>JavaScript "this"</h2>
 
-<button onclick="myFunction()">Try it</button>
+<p>This example demonstrate that in Arrow Functions, the "this" keyword represents the object that owns the function, no matter who calls the function.</p>
+
+<p>Click the button to execute the "hello" function again, and you will see that "this" still  represents the window object.</p>
+
+<button id="btn">Click Me!</button>
 
 <p id="demo"></p>
 
 <script>
-function myFunction() {
-  var str = "Visit Mashupstack";
-  var patt1 = /Mashupstack/i;
-  var result = str.match(patt1);
-  document.getElementById("demo").innerHTML = result;
+var hai;
+
+haii = () => {
+  document.getElementById("demo").innerHTML += this;
 }
 
+//The window object calls the function:
+window.addEventListener("load", haii);
+
+//A button object calls the function:
+document.getElementById("btn").addEventListener("click", haii);
 </script>
+
 </body>
 </html>
