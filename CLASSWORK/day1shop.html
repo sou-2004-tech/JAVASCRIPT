@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="tot"></p>
+    <p id="tot2"></p>
+    <script>
+        var p_rice=100, p_sugar=50, p_wheat=30;
+        var q_rice=5, q_sugar=4, q_wheat=6;
+        var totalp=p_rice*q_rice+p_sugar*q_sugar+p_wheat*q_wheat;
+        document.getElementById("tot").innerHTML="Total price is"+totalp;
+        var p_rice=120;
+        var totalp2=p_rice*q_rice+p_sugar*q_sugar+p_wheat*q_wheat;
+        document.getElementById("tot2").innerHTML="Total price is"+totalp2;
+    </script>
+</body>
+</html>

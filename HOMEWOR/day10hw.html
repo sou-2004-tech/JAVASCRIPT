@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const checkfeedback = (feedbacktext) => {
+            const thankyouRegex = /thank/i;
+            if(thankyouRegex.test(feedbacktext)){
+                return"Positive feedback received";
+            }
+                else{
+                    return "Feedback noted";
+                }
+            
+        };
+
+        function processmsg(jsonstring){
+            try{
+                const feedbackobj = JSON.parse(jsonstring);
+                const feedbackmsg = feedbackobj.message;
+                const resultmessage = checkfeedback(feedbackmsg);
+                console.log(resultmessage);
+            }catch(error){
+                console.log("Invalid JSON form format:", error.message);
+            }
+        }
+
+        const str='{"user":"Jose", "message":"Thank You for your excellent service"}';
+        processmsg(str);
+    </script>
+</body>
+</html>

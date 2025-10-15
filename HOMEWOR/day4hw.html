@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="rand"></p>
+    <p id="userscore"></p>
+    <p id="diff"></p>
+    <p id="c"></p>
+    <p id="d"></p>
+    <p id="mut"></p>
+    <p id="mn"></p>
+    <p id="mx"></p>
+    <script>
+        var a = Math.floor(Math.random()*50);
+        document.getElementById("rand").innerHTML="The Mystery number is:"+a;
+        var userinputscore="45"
+        var userinputscoren=Number(userinputscore);
+        document.getElementById("userscore").innerHTML="User Input Score:"+userinputscoren;
+        var diffe = Math.abs(a-userinputscoren);
+        document.getElementById("diff").innerHTML="Difference between the two numbers is:"+diffe;
+        var c=Math.sqrt(userinputscoren);
+        c=Math.log(c);
+        document.getElementById("c").innerHTML="The log of the square root of the user input score is:"+c;
+        var d=Math.log(Math.PI);
+        document.getElementById("d").innerHTML="The log of the value of pi is:"+d;
+        var e="20"
+        document.getElementById("mut").innerHTML="The Number 20 multiplied by 5 gives:"+((e)*5);
+        var mn=Math.min(10,20,a);
+        var mx=Math.max(10,20,a);
+        document.getElementById("mn").innerHTML="The lowest value among 10,20 and the mystery number is:"+mn;
+        document.getElementById("mx").innerHTML="The highest value among 10,20 and the mystery number is:"+mx;
+            </script>
+</body>
+</html>

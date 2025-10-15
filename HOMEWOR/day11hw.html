@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class user{
+            constructor(name,age,email){
+                this.name = name;
+                this.age = age;
+                this.email = email;
+            }
+        
+        getname(){
+            return this.name;
+        }
+        getage(){
+            return this.age;
+        }
+        getemail(){
+            return this.email;
+        }
+
+        setemail (newemail){
+            if(newemail.includes('@')){
+                this.email=newemail;
+                console.log("Email uploaded Successfully");
+            }else{
+                console.log("Invalid email format, Email not updated");
+            }
+            }
+
+            printdetails(){
+                console.log(`Name:${this.getname()}`);
+                console.log(`Age:${this.getage()}`);
+                console.log(`Email:${this.email}`);
+            }
+        }
+
+        const user1= new user("Ammu",24,"Ammu@gmail.com");
+        user1.printdetails();
+
+        console.log("The new email after correct updation is:");
+        user1.setemail("Ammu123@gmail.com");
+        user1.printdetails();
+
+        console.log("The new email after incorrect updation is:");
+        user1.setemail("Ammu123");
+        user1.printdetails();
+
+
+    
+    </script>
+</body>
+</html>

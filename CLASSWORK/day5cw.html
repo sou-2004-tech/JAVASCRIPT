@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="document.getElementById('confirm').innerHTML=check();">click Me!!</button><br>
+    <p id="confirm"> </p>
+    <script>
+
+        let order={
+            itemname:"tshirt",
+            isdelivered:"delivered",
+            daysSincedeivered:7
+        };
+        
+        function check(){
+            var check1=((order.isdelivered==="delivered")&&(order.daysSincedeivered<=7))?"Eligible for Return!":"Response time expired!";
+            document.getElementById("confirm").innerHTML=check1;
+            return check1;
+
+        }
+    </script>
+</body>
+</html>

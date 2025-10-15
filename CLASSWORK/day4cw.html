@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>The random number between 1 and 100 is:
+    </p>
+    <p id="demo"></p>
+    <p id="type1"></p>
+    <p id="type2"></p>
+    <p id="sqrt"></p>
+    <p id="pi"></p>
+    <p id="mut"></p>
+    <script>
+        
+        var a = Math.floor(Math.random()*100);
+        var uscore ="75";
+        var uscoren = Number(uscore);
+        var b="50";
+
+        document.getElementById("demo").innerHTML="random number between 1 and 100:"+a;
+        document.getElementById("type1").innerHTML="Type of the userscore before conversion:"+typeof(uscore);
+        document.getElementById("type2").innerHTML="<p>Type of the userscore after conversion:"+typeof(uscoren)+"</p>"
+        document.getElementById("sqrt").innerHTML="Square root of the userscore is:"+Math.sqrt(uscoren);
+        document.getElementById("pi").innerHTML="<p>The value of pi is:"+Math.PI+"</p>";
+        document.getElementById("mut").innerHTML="The Number 50 multiplied by 2 gives:"+Number(50)*2;
+    </script>
+    
+</body>
+</html>
