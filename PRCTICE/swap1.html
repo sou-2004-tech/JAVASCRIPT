@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        let a = Number(prompt("Enter the first number:"));
+        let b = Number(prompt("Enter the second number:"));
+        let c;
+
+        document.getElementById("demo").innerHTML=`The Variables before swapping gives a=${a} b=${b}`;
+        
+        c= a;
+        a=b;
+        b=c;
+        
+
+        document.getElementById('demo1').innerHTML=`The Values after swapping gives: a=${a} b=${b}`;
+        
+
+
+    </script>
+</body>
+</html>

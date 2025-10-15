@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <script>
+        let a = Number(prompt("Enter the value of the variable a:"));
+        let b = Number(prompt("Enter the value of the variable b:"));
+        let c= Number(prompt("Enter the value of the variable c:"));
+
+        let d=(b*b-(4*a*c));
+
+        let e=Math.sqrt(d);
+
+        let first=((-b+e)/(2*a));
+        let second=((-b-e)/(2*a));
+
+        document.getElementById("demo").innerHTML=`The first solution is ${first}`;
+        document.getElementById("demo1").innerHTML=`The Second zero is ${second}`;
+
+        // console.log(first);
+        // console.log(second);
+    </script>
+    
+</body>
+</html>

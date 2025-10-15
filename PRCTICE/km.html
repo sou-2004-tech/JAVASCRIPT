@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <!-- <p id="demo1"></p> -->
+    <script>
+
+        let a=Number(prompt("Enter the kilometers to convert:"));
+        let c=Number(prompt("Enter the temperature in Celcius:"));
+        let num=Number(prompt("Enter a number:"));
+
+        let b = a*0.62;
+        let fah=(c*1.8)+32;
+        let r=Math.random()+(10-1)+1;
+
+
+        if (num>0){
+            console.log("The number entered is positive")
+        }
+        else if(num<0){
+            console.log("The number entered is less than zero.")
+        }
+        else{
+            console.log("The number entered is equal to zero")
+        }
+
+        if(num%2==0){
+            console.log("The number is even");
+
+        }
+        else if(num%2!=0){
+            console.log("The number is odd");
+        }
+        else{
+            console.log("The number is zero");
+        }
+
+        document.getElementById("demo").innerHTML=`The ${a} kilometers is ${b} miles and the temperature in fahrenheit gives:${fah}F and the random number generated is ${r}`;
+        // document.getElementById("demo1").innerHTML=`The random Number generated is: ${r}`;
+    
+    </script>
+</body>
+</html>

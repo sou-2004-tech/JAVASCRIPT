@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <script>
+    var a =Number(prompt("Enter the first side of the triangle"));
+    var b = Number(prompt("Enter the second side of the triangle"));
+    var c = Number(prompt("Enter the third side of the triangle:"));
+
+    let s=a+b+c;
+
+    var d=Math.sqrt(s*((s-a)*(s-b)*(s-c)));
+
+    document.getElementById("demo").innerHTML=`The area of the triangle is: ${d}`;
+
+    </script>
+    
+</body>
+</html>

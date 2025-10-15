@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text" placholder="Type Something"><br>
+    <input type="date" id="date"><br>
+
+    <button id="submit">Submit</button>
+
+    <ul id="databox"></ul>
+
+    <script>
+        let text=document.getElementById('text');
+        let date = document.getElementById('date');
+        let databox=document.getElementById('databox');
+        let submit=document.getElementById('submit');
+
+        
+
+        submit.addEventListener('click',function(){
+            const value=text.value;
+            const datevalue=date.value;
+
+        if(value && datevalue){
+            const li=document.createElement('li');
+            li.textContent=value;
+            databox.appendChild(li);
+
+            const lo=document.createElement('lo');
+            lo.textContent=datevalue;
+            databox.appendChild(lo);
+
+            text.value='';
+            date.value='';
+
+        }
+
+        });
+    
+
+       
+            </script>
+    
+</body>
+</html>

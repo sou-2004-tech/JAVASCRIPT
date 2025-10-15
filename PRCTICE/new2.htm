@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Input to Array</title>
+</head>
+<body>
+
+  <h2>Add Item to Array</h2>
+
+  <form id="itemForm">
+    <input type="text" id="itemInput" placeholder="Enter item" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <h3>Items:</h3>
+  <ul id="itemList"></ul>
+
+  <script>
+    const items = []; // This will store the input values
+    const form = document.getElementById('itemForm');
+    const input = document.getElementById('itemInput');
+    const list = document.getElementById('itemList');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from refreshing the page
+
+      const value = input.value.trim();
+      if (value !== "") {
+        items.push(value); // Add to array
+
+        // Add to the list in the DOM
+        const li = document.createElement('li');
+        li.textContent = value;
+        list.appendChild(li);
+
+        input.value = ""; // Clear the input field
+        input.focus();    // Set focus back to input
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+    
+
+
