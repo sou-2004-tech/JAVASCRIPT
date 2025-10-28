@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="calc">
+    <input type="text"  id="text" pattern="[0-9]+"  placeholder="Enter the first digit" required><br><br>
+    <input type="text" id="text1" pattern="[0-9]+"  placeholder="Enter the second digit" required><br>
+    <select id="dropdown" required>
+        <option value=""disabled selected hidden>Enter the Operation</option>
+        <option value="add" id="add">addition</option>
+        <option value="mul" id="mul">Multiplication</option>
+        <option value="sub" id="sub">Subtraction</option>
+        <option value="div" id="div">division</option>
+    </select><br>
+    <button id="submit">=</button>
+    <button id="clear">Reset</button>
+
+    <p id="datafield"></p>
+    </form>
+
+    <script>
+
+        let text=document.getElementById("text");
+        let text1=document.getElementById("text1");
+        let add=document.getElementById("add");
+        let sub=document.getElementById("sub");
+        let mul=document.getElementById("mul");
+        let div=document.getElementById("div");
+        let submit=document.getElementById("submit");
+        let dropdown=document.getElementById("dropdown");
+        let clear=document.getElementById("clear");
+        
+
+
+
+        submit.addEventListener('click',function(event){
+            event.preventDefault();
+
+            const a=Number(text.value);
+            const b=Number(text1.value);
+            const c=dropdown.value;
+            let d=calc.value;
+
+             
+
+           
+            switch(c){
+                case "add":
+                    result = a+b;
+                    break;
+
+                case "sub":
+                    result=a-b;
+                    break;
+                    
+                case "mul":
+                    result=a*b;
+                    break;
+                    
+                case "div":
+                    result=b!==0?a/b:"Error:Division by Zero is not possible"
+                    break;
+
+                    default:
+                        result="Invalid Operation"
+                    
+                // return result;    
+            }
+            datafield.textContent=`The Result is:${result}`;
+
+           
+
+        }); 
+            clear.addEventListener('click',function(){
+            d.reset();
+            
+
+            })
+            
+
+
+
+
+    </script>
+
+</body>
+</html>

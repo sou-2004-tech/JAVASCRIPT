@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+
+  #demo {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* #submit {
+    
+    justify-content: center;
+    align-items: center;
+    
+
+    } */
+
+
+    </style>
+
+</head>
+<body>
+     
+     <!-- <h1 style="color: red;">The Lottery Result </h1><br> -->
+
+     <div style=" display:flex;justify-content: center; align-items: center; padding: 50px 50px;">
+	<button type="submit" id="submit" class="btn btn-primary" >Click Me</button><br>
+    </div>
+    
+	<p id="demo" style="font-size: 50px; font-family: helvetica;"></p>
+
+
+    <div class="modal fade" id="myModal" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalLabel">Winner Announcement</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body" id="modalBody">
+          
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+	<script>
+
+		let numbers=[1,2,3,4,5,6,7];
+		let submit=document.getElementById("submit");
+
+        submit.addEventListener('click',function(event){
+        	event.preventDefault();
+
+
+		let random=Math.floor(Math.random()*numbers.length);
+        let winner = numbers[random];
+
+		console.log('The Winner is '+winner);
+		document.getElementById("demo").innerHTML=`The Winner is Number: ${winner}`;
+    document.getElementById("demo").style.color="red";
+
+		document.getElementById("modalBody").innerText = `Congratulations! The Winner is Number: ${winner}`;
+
+      
+      $('#myModal').modal('show');
+
+        
+	});
+		
+
+	</script>
+</body>
+</html>
