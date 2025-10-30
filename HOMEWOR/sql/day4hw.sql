@@ -8,3 +8,4 @@ UPDATE students SET fees_paid = fees_paid + 1000 WHERE course = 'Data Science';
 UPDATE students SET status = 'Inactive' , fees_paid = fees_paid - 500 WHERE id = 3;
 DELETE FROM students WHERE id = 2;
 DELETE FROM students WHERE status = 'Inactive';
+SELECT * FROM `store`;
